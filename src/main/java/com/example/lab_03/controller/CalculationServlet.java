@@ -24,14 +24,38 @@ public class CalculationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<String> names = List.of("a", "b", "c", "d");
         List<Param> params = names.stream().map(x -> new Param(
-                        Double.parseDouble(request.getParameter(x + "From")),
-                        Double.parseDouble(request.getParameter(x + "To")),
-                        Double.parseDouble(request.getParameter(x + "Step"))))
+                        Integer.parseInt(request.getParameter(x + "From")),
+                        Integer.parseInt(request.getParameter(x + "To")),
+                        Integer.parseInt(request.getParameter(x + "Step"))))
                 .toList();
 
+//        request.getParameterNames();
+//        String from = request.getParameter("dFrom");
+//        String to = request.getParameter("dTo");
+//        String step = request.getParameter("dStep");
+//        request.setAttribute("from", from);
+//        request.setAttribute("to", to);
+//        request.setAttribute("step", step);
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("deno.jsp");
+//        dispatcher.forward(request, response);
+//        System.out.println(params);
+//        Param a = new Param(Integer.parseInt(request.getParameter("aFrom")),
+//                Integer.parseInt(request.getParameter("aTo")),
+//                Integer.parseInt(request.getParameter("aStep")));
+//        Param b = new Param(Integer.parseInt(request.getParameter("bFrom")),
+//                Integer.parseInt(request.getParameter("bTo")),
+//                Integer.parseInt(request.getParameter("bStep")));
+//        Param c = new Param(Integer.parseInt(request.getParameter("cFrom")),
+//                Integer.parseInt(request.getParameter("cTo")),
+//                Integer.parseInt(request.getParameter("cStep")));
+//        Param d = new Param(Integer.parseInt(request.getParameter("dFrom")),
+//                Integer.parseInt(request.getParameter("dTo")),
+//                Integer.parseInt(request.getParameter("dStep")));
+
+//        List<Param> params = List.of(a, b, c, d);
         List<Answer> answers = calculator.calculateTask(params);
         request.setAttribute("answers", answers);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/answer.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("answer.jsp");
         dispatcher.forward(request, response);
 //        Map<String, String> map = new HashMap<>();
 //        for (int i = 0; i < names.size(); i++) {

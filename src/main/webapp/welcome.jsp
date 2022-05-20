@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ include file="answer.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,15 +27,15 @@
     to
     <input type="number" name="cTo">
     step
-    <input type="number" name="сStep"><br>
+    <input type="number" name="cStep"><br>
     d: from
-    <input type="number" name=dFrom">
+    <input type="number" name="dFrom">
     to
     <input type="number" name="dTo">
     step
     <input type="number" name="dStep"><br>
     <input type="submit" value="Calculate">
 </form>
-<jsp:include page="answer.jsp" />
+<jsp:include page="answer.jsp"/>
 </body>
 </html>

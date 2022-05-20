@@ -1,37 +1,46 @@
 package com.example.lab_03.model;
 
 public class Param {
-    private double from;
-    private double to;
-    private double step;
+    private int from;
+    private int to;
+    private int step;
 
-    public Param(double from, double to, double step) {
+    public Param(int from, int to, int step) {
         this.from = from;
         this.to = to;
         this.step = step;
     }
 
-    public double getFrom() {
+    public int getFrom() {
         return from;
     }
 
-    public void setFrom(double from) {
+    public void setFrom(int from) {
         this.from = from;
     }
 
-    public double getTo() {
+    public int getTo() {
         return to;
     }
 
-    public void setTo(double to) {
+    public void setTo(int to) {
         this.to = to;
     }
 
-    public double getStep() {
+    public int getStep() {
         return step;
     }
 
-    public void setStep(double step) {
+    public void setStep(int step) {
         this.step = step;
+    }
+
+    @Override
+    public String toString() {
+        return "Param{" +
+                "from=" + from +
+                ", to=" + to +
+                ", step=" + step +
+                '}';
     }
 }
