@@ -14,24 +14,23 @@
     <title>Answer</title>
 </head>
 <body>
-    <table>
+<table>
+    <tr>
+        <th>a</th>
+        <th>b</th>
+        <th>c</th>
+        <th>d</th>
+        <th>result</th>
+    </tr>
+    <c:forEach var="answer" items="${answers}">
         <tr>
-            <th>a</th>
-            <th>b</th>
-            <th>c</th>
-            <th>d</th>
-            <th>result</th>
+            <td>${answer.a}</td>
+            <td>${answer.b}</td>
+            <td>${answer.c}</td>
+            <td>${answer.d}</td>
+            <td>${answer.result}</td>
         </tr>
-        <tr>
-            <c:forEach var="answer" items="${answers}">
-                <td>${answer.a}</td>
-                <td>${answer.b}</td>
-                <td>${answer.c}</td>
-                <td>${answer.d}</td>
-                <td>${answer.result}</td>
-            </c:forEach>
-        </tr>
-    </table>
-Hello
+    </c:forEach>
+</table>
 </body>
 </html>
